@@ -1,20 +1,20 @@
 # Cpp-17-compiler
-This project used three layers of Compiler
+This project used fiver layers of Compiler
 -Lexical Analyzer
 -Syntax Analyzer
 -Symmantic Analyzer 
 -Intermediate Generate Code
 -Optimizer
 
-I added the AST(Abstract Syntax Tre) to this project to this project to learn the process of the compiling and cutting the edges in the optimizer layer.
+I added the AST(Abstract Syntax Tree) to this project to learn the process of the compiling and cutting the edges in the optimizer layer.
 
-This project had been done using OOP and some of python elimenation code, also using CFG(Context Free Grammar) that i tried to simplify in the 
+This project had been done using OOP and some of python elimenation code, also using CFG(Context Free Grammar) that i tried to simplify in the: 
 
 ```
 grammar.txt
 ```
 
-I learnt a lot from this project side by side with grammar and parser quality and each layer interacting with last one, even generating the code in the fourth layer(supposdly the most easy one), I wish I can continue with more project like this but it take time and too much effort.
+I learnt a lot from this project side by side with grammar, parser, quality coding, and each layer interacting with it's successor or subsequent layer , even generating the code in the fourth layer(supposdely the most easy one), I wish to continue coding more project like this.
 
 
 # Running this file 
