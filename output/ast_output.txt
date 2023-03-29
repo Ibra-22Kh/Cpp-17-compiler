@@ -1,0 +1,631 @@
+# sent
+ < sent
+> sent
+# sent
+ //Hello World!!
+  = sent
+ ######AST : T_INT 100
+######AST : leaf created at 100
+; sent
+######AST : var_init Assignment
+######AST : leaf created at global
+######AST : $1 : global $3 : 0x55c4fba067b0
+stack contents
+-----------------
+not empty
+global
+100
+-----------------
+######DECLARE & ASSIGN FLAG set to 1
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+global
+100
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+global
+100
+-----------------
+######DECLR_AND_ASSIGN BRANCH declare_and_assign_branch()
+######LEAFS : int global 100
+######AST : node created at DECLR_STAT
+node pushed into tree
+######AST : 
+Inserted global for the first time with linenumber 6!
+ = sent
+######AST : T_INT 10
+######AST : leaf created at 10
+; sent
+######AST : var_init Assignment
+######AST : leaf created at a
+######AST : $1 : a $3 : 0x55c4fba06dc0
+stack contents
+-----------------
+not empty
+a
+10
+-----------------
+######DECLARE & ASSIGN FLAG set to 1
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+a
+10
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+a
+10
+-----------------
+######DECLR_AND_ASSIGN BRANCH declare_and_assign_branch()
+######LEAFS : int a 10
+######AST : node created at DECLR_STAT
+node pushed into tree
+######AST : 
+Inserted a for the first time with linenumber 8!
+######AST : leaf created at if
+( sent
+######AST : List identifier a
+######AST : leaf created at a
+######RELOP : ==
+######AST : leaf created at ==
+######AST : T_INT 12
+######AST : leaf created at 12
+) sent
+stack contents
+-----------------
+not empty
+12
+==
+a
+if
+-----------------
+######AST : relop 
+######AST : $1 : 0x55c4fba07180 $3 : 0x55c4fba072c0
+######AST : node created at ==
+{ sent
+	 ; sent
+######AST : List identifier c
+######AST : leaf created at c
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+c
+==
+if
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+c
+==
+if
+-----------------
+######STATEMENT IN IF LOOP
+######General declaration in loop
+######AST : 
+Inserted c for the first time with linenumber 11!
+	 ; sent
+######AST : List identifier d
+######AST : leaf created at d
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+d
+DECLR_STAT
+==
+if
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+d
+DECLR_STAT
+==
+if
+-----------------
+######STATEMENT IN IF LOOP
+######General declaration in loop
+######AST : 
+Inserted d for the first time with linenumber 12!
+	= sent
+######AST : T_INT 1
+######AST : leaf created at 1
+; sent
+######AST : assignment_exp Assignment
+stack contents
+-----------------
+not empty
+1
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######AST : $1 : c $3 : 0x55c4fba07a30
+######AST : leaf created at c
+######NODE CREATION : RL EXPRESSION EVALUATION central_node_creation()
+######Popping 1 and c
+######AST : node created at =
+######IF/FOR/WHILE flag detected
+
+	######AST : leaf created at if
+( sent
+######AST : List identifier c
+######AST : leaf created at c
+######RELOP : ==
+######AST : leaf created at ==
+######AST : T_INT 1
+######AST : leaf created at 1
+) sent
+stack contents
+-----------------
+not empty
+1
+==
+c
+if
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######AST : relop 
+######AST : $1 : 0x55c4fba07c70 $3 : 0x55c4fba07db0
+######AST : node created at ==
+{ sent
+		 ; sent
+######AST : List identifier U
+######AST : leaf created at U
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+U
+==
+if
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+U
+==
+if
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######STATEMENT IN IF LOOP
+######General declaration in loop
+######AST : 
+Inserted U for the first time with linenumber 15!
+	} sent
+	######IF
+stack contents
+-----------------
+not empty
+DECLR_STAT
+==
+if
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######Creating new branch
+DECLR_STAT
+adding DECLR_STAT
+popping ==
+adding ==
+popping if
+1
+popping and adding DECLR_STAT
+######IF added to the tree
+stack contents
+-----------------
+not empty
+IF_STRUCT
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+ = sent
+  + sent
+######AST : List identifier c
+######AST : leaf created at c
+ ; sent
+######AST : List identifier d
+######AST : leaf created at d
+######AST : addition
+######AST : $1 : 0x55c4fba08860 $3 : 0x55c4fba08930
+######NODE CREATION : LR EXPRESSION EVALUATION central_node_creation_exp()
+######Popping d and c
+######AST : node created at +
+
+######AST : assignment_exp Assignment
+stack contents
+-----------------
+not empty
++
+IF_STRUCT
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######AST : $1 : d $3 : 0x55c4fba08a30
+######AST : leaf created at d
+######NODE CREATION : RL EXPRESSION EVALUATION central_node_creation()
+######Popping + and d
+######AST : node created at =
+######IF/FOR/WHILE flag detected
+
+} sent
+######IF
+stack contents
+-----------------
+not empty
+=
+IF_STRUCT
+=
+DECLR_STAT
+DECLR_STAT
+==
+if
+-----------------
+######Creating new branch
+=
+adding =
+popping IF_STRUCT
+adding IF_STRUCT
+popping =
+adding =
+popping DECLR_STAT
+adding DECLR_STAT
+popping DECLR_STAT
+adding DECLR_STAT
+popping ==
+adding ==
+popping if
+5
+popping and adding DECLR_STAT
+popping and adding DECLR_STAT
+popping and adding =
+popping and adding IF_STRUCT
+popping and adding =
+######IF added to the tree
+stack contents
+-----------------
+empty
+-----------------
+######AST : leaf created at if
+( sent
+######AST : List identifier global
+######AST : leaf created at global
+######RELOP : >=
+######AST : leaf created at >=
+######AST : T_INT 12
+######AST : leaf created at 12
+) sent
+stack contents
+-----------------
+not empty
+12
+>=
+global
+if
+-----------------
+######AST : relop 
+######AST : $1 : 0x55c4fba08d60 $3 : 0x55c4fba08f50
+######AST : node created at >=
+{ sent
+	 ; sent
+######AST : List identifier e
+######AST : leaf created at e
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+e
+>=
+if
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+e
+>=
+if
+-----------------
+######STATEMENT IN IF LOOP
+######General declaration in loop
+######AST : 
+Inserted e for the first time with linenumber 20!
+	 ; sent
+######AST : List identifier f
+######AST : leaf created at f
+######AST : declaration_statement Type int
+stack contents
+-----------------
+not empty
+f
+DECLR_STAT
+>=
+if
+-----------------
+######AST : leaf created at int
+stack contents
+-----------------
+not empty
+int
+f
+DECLR_STAT
+>=
+if
+-----------------
+######STATEMENT IN IF LOOP
+######General declaration in loop
+######AST : 
+Inserted f for the first time with linenumber 21!
+	= sent
+######AST : T_INT 1
+######AST : leaf created at 1
+; sent
+######AST : assignment_exp Assignment
+stack contents
+-----------------
+not empty
+1
+DECLR_STAT
+DECLR_STAT
+>=
+if
+-----------------
+######AST : $1 : e $3 : 0x55c4fba096a0
+######AST : leaf created at e
+######NODE CREATION : RL EXPRESSION EVALUATION central_node_creation()
+######Popping 1 and e
+######AST : node created at =
+######IF/FOR/WHILE flag detected
+
+	 = sent
+  + sent
+######AST : List identifier f
+######AST : leaf created at f
+ ; sent
+######AST : List identifier e
+######AST : leaf created at e
+######AST : addition
+######AST : $1 : 0x55c4fba09870 $3 : 0x55c4fba09940
+######NODE CREATION : LR EXPRESSION EVALUATION central_node_creation_exp()
+######Popping e and f
+######AST : node created at +
+
+######AST : assignment_exp Assignment
+stack contents
+-----------------
+not empty
++
+=
+DECLR_STAT
+DECLR_STAT
+>=
+if
+-----------------
+######AST : $1 : f $3 : 0x55c4fba09a40
+######AST : leaf created at f
+######NODE CREATION : RL EXPRESSION EVALUATION central_node_creation()
+######Popping + and f
+######AST : node created at =
+######IF/FOR/WHILE flag detected
+
+} sent
+######IF
+stack contents
+-----------------
+not empty
+=
+=
+DECLR_STAT
+DECLR_STAT
+>=
+if
+-----------------
+######Creating new branch
+=
+adding =
+popping =
+adding =
+popping DECLR_STAT
+adding DECLR_STAT
+popping DECLR_STAT
+adding DECLR_STAT
+popping >=
+adding >=
+popping if
+4
+popping and adding DECLR_STAT
+popping and adding DECLR_STAT
+popping and adding =
+popping and adding =
+######IF added to the tree
+stack contents
+-----------------
+not empty
+IF_STRUCT
+-----------------
+ ; sent
+######AST : List identifier a
+######AST : leaf created at a
+Parsing successful!
+Identifier Name	a
+Scope Id	0
+Type		1
+Value		10
+Line Numbers	
+8 
+Size		0
+---------------------
+Identifier Name	global
+Scope Id	0
+Type		1
+Value		100
+Line Numbers	
+6 
+Size		0
+---------------------
+
+Identifier Name	d
+Scope Id	1
+Type		1
+Value		-86766476
+Line Numbers	
+12 
+Size		0
+---------------------
+Identifier Name	c
+Scope Id	1
+Type		1
+Value		1
+Line Numbers	
+11 
+Size		0
+---------------------
+Identifier Name	f
+Scope Id	1
+Type		1
+Value		-86766476
+Line Numbers	
+21 
+Size		0
+---------------------
+Identifier Name	e
+Scope Id	1
+Type		1
+Value		1
+Line Numbers	
+20 
+Size		0
+---------------------
+
+Identifier Name	U
+Scope Id	2
+Type		1
+Value		-86766477
+Line Numbers	
+15 
+Size		0
+---------------------
+
+Checking stack
+stack contents
+-----------------
+not empty
+a
+IF_STRUCT
+-----------------
+SYNTAX TREE (BRANCH-WISE - LevelOrder)
+<body>
+||
+||
+||
+||
+DECLR_STAT 
+int		
+global 
+100 
+
+||
+||
+||
+||
+DECLR_STAT 
+int		
+a 
+10 
+
+||
+||
+||
+||
+IF_STRUCT 
+if		
+COND STATEMENT 
+==		DECLR_STAT		DECLR_STAT		=		IF_STRUCT		=		
+12		
+a		
+int		
+c		
+int		
+d		
+c		
+1		
+if		
+COND		STATEMENT		d		
++		==		DECLR_STAT		
+c		
+d		
+1		
+c		
+int 
+U 
+
+||
+||
+||
+||
+a 
+
+||
+||
+||
+||
+IF_STRUCT 
+if		
+COND STATEMENT 
+>=		DECLR_STAT		DECLR_STAT		=		=		
+12		
+global		
+int		
+e		
+int		
+f		
+e		
+1		
+f 
++ 
+f 
+e 
+
